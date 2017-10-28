@@ -1,69 +1,83 @@
-@import url('https://fonts.googleapis.com/css?family=Saira+Extra+Condensed');
+	@import url('https://fonts.googleapis.com/css?family=Saira+Extra+Condensed');
 
-body,	
-html{
-	background: rgb(44,83,158); /* Old browsers */
-	background: -moz-linear-gradient(top, rgba(44,83,158,1) 0%, rgba(44,83,158,1) 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(top, rgba(44,83,158,1) 0%,rgba(44,83,158,1) 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to bottom, rgba(44,83,158,1) 0%,rgba(44,83,158,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2c539e', endColorstr='#2c539e',GradientType=0 ); /* IE6-9 */
-	height: 100%;
-	font-family: 'Saira Extra Condensed', sans-serif;
+	body,	
+	html{
+		background: rgb(44,83,158); /* Old browsers */
+		background: -moz-linear-gradient(top, rgba(44,83,158,1) 0%, rgba(44,83,158,1) 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(top, rgba(44,83,158,1) 0%,rgba(44,83,158,1) 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to bottom, rgba(44,83,158,1) 0%,rgba(44,83,158,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2c539e', endColorstr='#2c539e',GradientType=0 ); /* IE6-9 */
+		height: 100%;
+		font-family: 'Saira Extra Condensed', sans-serif;
 
-}
-
-
-a{
-	text-decoration: none;
-}
-
-.sec{
-	display: block;
-	margin: auto;
-	padding: 15% 15%;
-}
-
-.square{
-	margin: .3%;
-	padding: 6em 7em;
-	display: inline-block;
+	}
 
 
-}
+	a{
+		text-decoration: none;
+	}
 
-#location{
-	background-color: rgb(102, 153, 204);
-}
+	.box1{
+		display: block;
+	}
 
-#location:hover{
-	background-color: #94c6f7;
-}
+	.box2{
+		display: block;
+	}
 
-#x{
-	background-color: rgb(255, 204, 102);
-}
+	.indexHeader{
+		padding: 30px;
+		background-color: #fff;
+		margin: -1%;
+	}
 
-#x:hover{
-	background-color: #fff894;
-}	
+	.sec{
+		display: block;
+		margin: auto;
+		padding: 8% 35%;
+	}
 
-#y{
-	background-color: rgb(255, 102, 102);
-}
+	.square{
+		margin: 1% .5%;
+		padding: 5em 6em;
+		display: inline-block;
 
-#y:hover{
-	background-color: #ff9494;
-}
 
-#recycle{
-	background-color: rgb(153, 204, 102); 
-}
+	}
 
-#recycle:hover{
-	background-color: #c6f794;
-}
-	/*
-	background-color: rgb(102, 153, 204);
-	background-color: rgb(153, 204, 102);
+	#location{
+		background-color: rgb(102, 153, 204);
+	}
+
+	#location:hover{
+		background-color: #94c6f7;
+	}
+
+	#x{
+		background-color: rgb(255, 204, 102);
+	}
+
+	#x:hover{
+		background-color: #fff894;
+	}	
+
+	#y{
+		background-color: rgb(255, 102, 102);
+	}
+
+	#y:hover{
+		background-color: #ff9494;
+	}
+
+	#recycle{
+		background-color: rgb(153, 204, 102); 
+	}
+
+	#recycle:hover{
+		background-color: #c6f794;
+	}
+		/*
+		background-color: rgb(102, 153, 204);
+		background-color: rgb(153, 204, 102);
 
 
