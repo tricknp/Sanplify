@@ -1,78 +1,122 @@
-	@import url('https://fonts.googleapis.com/css?family=Saira+Extra+Condensed');
+		@import url('https://fonts.googleapis.com/css?family=Saira+Extra+Condensed');
 
-	body,	
-	html{
-		background: rgb(44,83,158); /* Old browsers */
-		background: -moz-linear-gradient(top, rgba(44,83,158,1) 0%, rgba(44,83,158,1) 100%); /* FF3.6-15 */
-		background: -webkit-linear-gradient(top, rgba(44,83,158,1) 0%,rgba(44,83,158,1) 100%); /* Chrome10-25,Safari5.1-6 */
-		background: linear-gradient(to bottom, rgba(44,83,158,1) 0%,rgba(44,83,158,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2c539e', endColorstr='#2c539e',GradientType=0 ); /* IE6-9 */
-		height: 100%;
-		font-family: 'Saira Extra Condensed', sans-serif;
+		body,	
+		html{
+			background: rgb(44,83,158); /* Old browsers */
+			background: -moz-linear-gradient(top, rgba(44,83,158,1) 0%, rgba(44,83,158,1) 100%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(top, rgba(44,83,158,1) 0%,rgba(44,83,158,1) 100%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to bottom, rgba(44,83,158,1) 0%,rgba(44,83,158,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2c539e', endColorstr='#2c539e',GradientType=0 ); /* IE6-9 */
+			height: 100%;
+			font-family: 'Saira Extra Condensed', sans-serif;
 
-	}
+		}
 
 
-	a{
-		text-decoration: none;
-	}
+		a{
+			text-decoration: none;
+		}
 
-	.box1{
-		display: block;
-	}
+		ul li{
+			list-style: none;
+			display: inline;
+			margin: .2%;
+		}
+		.indexHeader{
+			padding: 30px;
+			background-color: #fff;
+			margin: -1%;
+		}
 
-	.box2{
-		display: block;
-	}
+		.sec{
+			text-align: center;
+		}
 
-	.indexHeader{
-		padding: 30px;
-		background-color: #fff;
-		margin: -1%;
-	}
+		.list-1{
+			padding-top: 6%;
 
-	.sec{
-		display: block;
-		margin: auto;
-		padding: 8% 35%;
-	}
+		}
 
-	.square{
-		margin: .7% .4%;
-		padding: 5em 6em;
-		display: inline-block;
-		border-radius: 4px;
-	}
+		.list-2{
+			margin-top: -1%;
+		}
 
-	#location{
-		background-color: rgb(102, 153, 204);
-	}
+		.img1:hover{
+			width: 255px;
+			height: 255px;
+		}
 
-	#location:hover{
-		background-color: #94c6f7;
-	}
 
-	#x{
-		background-color: rgb(255, 204, 102);
-	}
+		.img2:hover{
+			width: 255px;
+			height: 255px;
+		}
 
-	#x:hover{
-		background-color: #fff894;
-	}	
 
-	#y{
-		background-color: rgb(255, 102, 102);
-	}
+		.img3:hover{
+			width: 255px;
+			height: 255px;
+		}
 
-	#y:hover{
-		background-color: #ff9494;
-	}
 
-	#recycle{
-		background-color: rgb(153, 204, 102); 
-	}
+		.img4:hover{
+			width: 255px;
+			height: 255px;
+		}
+/*
+		.box1{
+			display: block;
+		}
 
-	#recycle:hover{
-		background-color: #c6f794;
-	}
+		.box2{
+			display: block;
+		}
+
+
+		.sec{
+			display: block;
+			margin: auto;
+			padding: 8% 35%;
+		}
+
+		.square{
+			margin: .7% .4%;
+			padding: 5em 6em;
+			display: inline-block;
+			border-radius: 4px;
+		}
+
+		#location{
+			background-color: rgb(102, 153, 204);
+		}
+
+		#location:hover{
+			background-color: #94c6f7;
+		}
+
+		#x{
+			background-color: rgb(255, 204, 102);
+		}
+
+		#x:hover{
+			background-color: #fff894;
+		}	
+
+		#y{
+			background-color: rgb(255, 102, 102);
+		}
+
+		#y:hover{
+			background-color: #ff9494;
+		}
+
+		#recycle{
+			background-color: rgb(153, 204, 102); 
+		}
+
+		#recycle:hover{
+			background-color: #c6f794;
+		}
+			/*
+
 
