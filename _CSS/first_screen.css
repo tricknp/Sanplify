@@ -38,11 +38,10 @@
 	}
 
 	.square{
-		margin: 1% .5%;
+		margin: .7% .4%;
 		padding: 5em 6em;
 		display: inline-block;
-
-
+		border-radius: 4px;
 	}
 
 	#location{
@@ -76,8 +75,4 @@
 	#recycle:hover{
 		background-color: #c6f794;
 	}
-		/*
-		background-color: rgb(102, 153, 204);
-		background-color: rgb(153, 204, 102);
-
 
