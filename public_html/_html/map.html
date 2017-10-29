@@ -48,9 +48,10 @@
             startLoc[7] = 'pelotas';
             startLoc[8] = 'pelotas';
             startLoc[9] = 'pelotas';
+            startLoc[10] = 'pelotas';
 
             var endLoc = new Array();
-            endLoc[0] = 'cassiano, pelotas';
+            endLoc[0] = 'tv seis, pelotas';
             endLoc[1] = 'centro, pelotas';
             endLoc[2] = 'av. artur de souza costa, pelotas';
             endLoc[3] = 'areal, pelotas';
@@ -60,6 +61,7 @@
             endLoc[7] = 'av. da paz, pelotas';
             endLoc[8] = 'loja krause, pelotas';
             endLoc[9] = 'colegio municipal pelotense, pelotas';
+            endLoc[10] = 'rua 7 setembro, pelotas';
 
 
             var Colors = ["#FF0000", "#00FF00", "#0000FF"];
@@ -278,12 +280,14 @@
             urchinTracker();
         </script>
         <script src="_html/map.html"></script>
+        <script src="getClientPosition.js">getLocation();</script>
+
         <script>
             setTimeout(
                     function () {
                         setRoutes()
                     }, 500);
-            
+
         </script>
     </body>
 </html>

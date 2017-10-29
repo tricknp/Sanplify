@@ -1,15 +1,11 @@
-var x = document.getElementById("demo");
-function getLocation()
-{
-    if (navigator.geolocation)
-    {
-        navigator.geolocation.getCurrentPosition(showPosition);
+var latitude;
+var longitude;
+
+function getLocation() {
+    if (navigator.geolocation) {
+        latitude = navigator.geolocation.getCurrentPosition().coords.latitude;
+        longite = navigator.geolocation.getCurrentPosition().coords.longitude;
     } else {
-        x.innerHTML = "O seu navegador não suporta Geolocalização.";
+        alert("O seu navegador não suporta Geolocalização.");
     }
-}
-function showPosition(position)
-{
-    x.innerHTML = "Latitude: " + position.coords.latitude +
-            "<br>Longitude: " + position.coords.longitude;
 }
