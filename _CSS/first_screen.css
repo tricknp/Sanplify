@@ -32,7 +32,7 @@
 
 			float: right;
 		  	display: inline-block;
-			padding: 0.8em 2.2em;
+			padding: 0.8em 1.5em;
 			margin-right: 2%;
 			background: transparent;
 			border: 0.225em solid;
@@ -43,11 +43,10 @@
 			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2c539e', endColorstr='#2c539e',GradientType=0 ); /* IE6-9 */
 			border-image-slice: 1;
 			font-weight: 900;
-			font-family: 'Open Sans', sans-serif;
+			font-family: 'Saira Semi Condensed', sans-serif;
 			color: #333355;
 			text-transform: uppercase;
 			font-size: 1.3em;
-			letter-spacing: 1px;
 			cursor: pointer;
 			}
 
