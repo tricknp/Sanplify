@@ -18,6 +18,8 @@
 
 		.indexHeader {
 		  background-color: #fff;
+		  color: #237195;
+		   font-family: 'Saira Extra Condensed', sans-serif;
 		  margin: -6px -1% -1% -1%;
 		  padding: 7px 20px;
 		}
