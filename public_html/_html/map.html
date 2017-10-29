@@ -42,12 +42,24 @@
             startLoc[1] = 'pelotas';
             startLoc[2] = 'pelotas';
             startLoc[3] = 'pelotas';
+            startLoc[4] = 'pelotas';
+            startLoc[5] = 'pelotas';
+            startLoc[6] = 'pelotas';
+            startLoc[7] = 'pelotas';
+            startLoc[8] = 'pelotas';
+            startLoc[9] = 'pelotas';
 
             var endLoc = new Array();
             endLoc[0] = 'cassiano, pelotas';
             endLoc[1] = 'centro, pelotas';
-            endLoc[2] = 'tres vendas, pelotas';
+            endLoc[2] = 'av. artur de souza costa, pelotas';
             endLoc[3] = 'areal, pelotas';
+            endLoc[4] = 'bento golsalves, pelotas';
+            endLoc[5] = 'gonsalves chaves, pelotas';
+            endLoc[6] = 'porto, pelotas';
+            endLoc[7] = 'av. da paz, pelotas';
+            endLoc[8] = 'loja krause, pelotas';
+            endLoc[9] = 'colegio municipal pelotense, pelotas';
 
 
             var Colors = ["#FF0000", "#00FF00", "#0000FF"];
@@ -73,6 +85,7 @@
 
                 });
                 // setRoutes();
+
             }
 
 
@@ -97,7 +110,6 @@
             }
 
             function setRoutes() {
-
                 var directionsDisplay = new Array();
 
                 for (var i = 0; i < startLoc.length; i++) {
@@ -118,7 +130,6 @@
                     };
 
                     directionsService.route(request, makeRouteCallback(i, directionsDisplay[i]));
-
                 }
 
 
@@ -240,6 +251,7 @@
                 if (timerHandle[index])
                     clearTimeout(timerHandle[index]);
                 eol[index] = polyline[index].Distance();
+
                 map.setCenter(polyline[index].getPath().getAt(0));
 
                 poly2[index] = new google.maps.Polyline({path: [polyline[index].getPath().getAt(0)], strokeColor: "#FFFF00", strokeWeight: 3});
@@ -255,10 +267,7 @@
     </head>
     <body onload="initialize()">
 
-        <div id="tools">
-
-            <button onclick="setRoutes();">Start</button>
-
+        <div id="tools" >
         </div>
 
         <div id="map_canvas" style="width:100%;height:100%;"></div>
@@ -267,6 +276,14 @@
         <script type="text/javascript">
             _uacct = "UA-162157-1";
             urchinTracker();
+        </script>
+        <script src="_html/map.html"></script>
+        <script>
+            setTimeout(
+                    function () {
+                        setRoutes()
+                    }, 500);
+            
         </script>
     </body>
 </html>

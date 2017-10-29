@@ -18,7 +18,7 @@ function getDistanciaTempo() {
         $.each(data, function(i, desafio) {
             item = "<center><h4>" + desafio.meta + "</h4></center>";
 
-            if (desafio.id == $('#selectDesafio').val() ) {
+            if (desafio.id === $('#selectDesafio').val() ) {
                 $('#blocodesafio').html(''),
                 $('#blocodesafio').append(item);
             }
