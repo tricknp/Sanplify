@@ -14,8 +14,11 @@ body, html {
 }
 
 * {
-  color: white;
   font-family: 'Saira Extra Condensed', sans-serif;
+}
+
+.textContainer{
+  color: #fff;
 }
 
 h2 {
@@ -30,6 +33,7 @@ p {
   background-color: #fff;
   margin: -6px -1% -1% -1%;
   padding: 7px 20px;
+  color: #237195;
 }
 
 .textContainer {
