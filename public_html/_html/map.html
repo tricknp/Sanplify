@@ -38,16 +38,16 @@
             var nextPanoId;
 
             var startLoc = new Array();
-            startLoc[0] = 'rio claro, trinidad';
-            startLoc[1] = 'preysal, trinidad';
-            startLoc[2] = 'san fernando, trinidad';
-            startLoc[3] = 'couva, trinidad';
+            startLoc[0] = 'pelotas';
+            startLoc[1] = 'pelotas';
+            startLoc[2] = 'pelotas';
+            startLoc[3] = 'pelotas';
 
             var endLoc = new Array();
-            endLoc[0] = 'princes town, trinidad';
-            endLoc[1] = 'tabaquite, trinidad';
-            endLoc[2] = 'mayaro, trinidad';
-            endLoc[3] = 'arima, trinidad';
+            endLoc[0] = 'cassiano, pelotas';
+            endLoc[1] = 'centro, pelotas';
+            endLoc[2] = 'tres vendas, pelotas';
+            endLoc[3] = 'areal, pelotas';
 
 
             var Colors = ["#FF0000", "#00FF00", "#0000FF"];
@@ -83,7 +83,7 @@
                     position: latlng,
                     map: map,
                     title: label,
-                    icon: '../_icons/Icones/mapTruck.png',
+                    icon: '../_icons/Icones/iconn.png',
                     zIndex: Math.round(latlng.lat() * -100000) << 5
                 });
                 marker.myname = label;
@@ -198,8 +198,8 @@
 
             var lastVertex = 1;
             var stepnum = 0;
-            var step = 50; // 5; // metres
-            var tick = 100; // milliseconds
+            var step = 1; // 5; // metres
+            var tick = 150; // milliseconds
             var eol = [];
             //----------------------------------------------------------------------                
             function updatePoly(i, d) {
