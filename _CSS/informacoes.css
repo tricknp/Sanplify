@@ -1,21 +1,68 @@
 @import url('https://fonts.googleapis.com/css?family=Saira+Extra+Condensed');
-body, html {
-  background: rgb(44, 83, 158);
-  /* Old browsers */
-  background: -moz-linear-gradient(top, rgba(44, 83, 158, 1) 0%, rgba(44, 83, 158, 1) 100%);
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, rgba(44, 83, 158, 1) 0%, rgba(44, 83, 158, 1) 100%);
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, rgba(44, 83, 158, 1) 0%, rgba(44, 83, 158, 1) 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2c539e', endColorstr='#2c539e', GradientType=0);
-  /* IE6-9 */
-  height: 100%;
-}
+@import url('https://fonts.googleapis.com/css?family=Saira+Semi+Condensed');
+@import url('https://fonts.googleapis.com/css?family=Kanit');
 
 * {
   font-family: 'Saira Extra Condensed', sans-serif;
 }
+
+body, 
+html{
+  background: rgb(44,83,158); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(44,83,158,1) 0%, rgba(44,83,158,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(44,83,158,1) 0%,rgba(44,83,158,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(44,83,158,1) 0%,rgba(44,83,158,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2c539e', endColorstr='#2c539e',GradientType=0 ); /* IE6-9 */
+  height: 100%;
+}
+
+
+a{
+  text-decoration: none;
+}
+
+
+.header {
+  font-family: 'Saira Semi Condensed', sans-serif;
+  font-size: 15pt;
+  background-color: #f9f9f9;
+  color: #237195;
+  padding:1px;
+  margin: -8px -8px;
+}
+
+
+.h1san{
+  position: absolute;
+  top: -20px;
+  right: 46%;
+}
+
+.btn {
+  float: right;
+  display: inline-block;
+  padding: 0.2em 1.3em;
+  margin: 0.3em 1em;
+  background: transparent;
+  border: 0.155em solid rgba(44,83,158,1);
+  transition-duration: .4s;
+  border-radius: 50px;
+  font-weight: 900;
+  font-family: 'Saira Semi Condensed', sans-serif;
+  color: rgba(44,83,158,1);
+  text-transform: uppercase;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.btn:hover {      
+  background: rgb(44,83,158); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(44,83,158,1) 0%, rgba(44,83,158,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(44,83,158,1) 0%,rgba(44,83,158,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(44,83,158,1) 0%,rgba(44,83,158,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  color: #fff;
+}
+
 
 .textContainer{
   color: #fff;
@@ -37,49 +84,10 @@ p {
 }
 
 .textContainer {
-  margin-top: 10%;
+  margin-top: 5%;
   display: grid;
   margin-left: 10%;
   grid-template-columns: 1fr;
-}
-
-.btn {
-  float: right;
-  display: inline-block;
-  padding: 0.8em 2.2em;
-  margin-right: 2%;
-  background: transparent;
-  bord  er: 0.225em solid;
-  border-image: rgb(44, 83, 158);
-  /* Old browsers */
-  border-image: -moz-linear-gradient(top, rgba(44, 83, 158, 1) 0%, rgba(44, 83, 158, 1) 100%);
-  /* FF3.6-15 */
-  border-image: -webkit-linear-gradient(top, rgba(44, 83, 158, 1) 0%, rgba(44, 83, 158, 1) 100%);
-  /* Chrome10-25,Safari5.1-6 */
-  border-image: linear-gradient(to bottom, rgba(44, 83, 158, 1) 0%, rgba(44, 83, 158, 1) 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2c539e', endColorstr='#2c539e', GradientType=0);
-  /* IE6-9 */
-  border-image-slice: 1;
-  font-weight: 900;
-  font-family: 'Open Sans', sans-serif;
-  color: #333355;
-  text-transform: uppercase;
-  font-size: 1.3em;
-  letter-spacing: 1px;
-  cursor: pointer;
-}
-
-.btn:hover {
-  background: rgb(44, 83, 158);
-  /* Old browsers */
-  background: -moz-linear-gradient(top, rgba(44, 83, 158, 1) 0%, rgba(44, 83, 158, 1) 100%);
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, rgba(44, 83, 158, 1) 0%, rgba(44, 83, 158, 1) 100%);
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, rgba(44, 83, 158, 1) 0%, rgba(44, 83, 158, 1) 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  color: #fff;
 }
 
 @media screen and (min-width: 736px) {
