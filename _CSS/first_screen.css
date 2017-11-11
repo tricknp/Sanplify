@@ -35,7 +35,7 @@ ul li{
 .h1san{
 	position: absolute;
 	top: -25px;
-	right: 45%;
+	right: 47%;
 }
 
 .btn {
@@ -62,11 +62,6 @@ ul li{
     background: linear-gradient(to bottom, rgba(44,83,158,1) 0%,rgba(44,83,158,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	color: #fff;
 }
-
-.sign{
-	float: right;
-	margin-top: -1.1%;
-} 
 
 
 /*Section*/
