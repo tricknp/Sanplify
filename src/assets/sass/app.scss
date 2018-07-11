@@ -1,0 +1,14 @@
+//Utilities
+@import 'app/_utilities/reset';
+@import 'app/_utilities/variables';
+@import 'app/_utilities/placeholders';
+
+//UI
+@import 'app/UI/icons';
+
+//Components
+@import 'app/MainComponents/Components/header';
+@import 'app/MainComponents/Components/main-menu';
+
+//Pages
+@import 'app/MainComponents/Pages/home';

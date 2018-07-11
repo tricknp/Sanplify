@@ -1,0 +1,38 @@
+.main-menu-container
+{
+    @extend %center-column;
+    color: $clear-grey;
+    margin-top: 10%;
+    
+    .menu-title > h1
+    {
+        font-size: 1.7em;
+        font-weight: 300;
+    }
+    
+
+    .menu-items
+    {
+        @extend %center-row;
+        flex-wrap: nowrap;
+        width: 58%;
+        margin-top: 1%;
+        justify-content: space-between;
+        
+        .menu-item-content
+        {
+            border-radius: 5px;
+            background: $clear-grey;
+            padding: 2.5em 3.5em;
+
+            &:hover
+            {
+                background: $absolute-white;
+                cursor: pointer;
+            }
+
+        }
+        
+        
+    }
+}
