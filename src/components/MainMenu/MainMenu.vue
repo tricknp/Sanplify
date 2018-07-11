@@ -5,9 +5,9 @@
         </div>    
 
         <div class="menu-items">
-            <div class="menu-item-content">
+            <router-link :to="{ name: 'Location' }" class="menu-item-content">
                 <img class="menu-item-icon" src="../../../static/icons/map.svg">
-            </div>
+            </router-link>
 
             <div class="menu-item-content">
                 <img class="menu-item-icon" src="../../../static/icons/claims.svg">

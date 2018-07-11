@@ -14,21 +14,24 @@
     .menu-items
     {
         @extend %center-row;
-        flex-wrap: nowrap;
-        width: 58%;
-        margin-top: 1%;
         justify-content: space-between;
+        flex-wrap: wrap;
+        width: 60%;
+        height: 11em;
+        margin-top: 1%;
         
         .menu-item-content
         {
+            @extend %center-column;
+            justify-content: center;
             border-radius: 5px;
+            width: 24%;
+            height: 100%;
+            margin: auto;
             background: $clear-grey;
-            padding: 2.5em 3.5em;
-
             &:hover
             {
                 background: $absolute-white;
-                cursor: pointer;
             }
 
         }
