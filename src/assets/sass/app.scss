@@ -1,5 +1,16 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    border: none;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+
 //Utilities
-@import 'app/_utilities/reset';
 @import 'app/_utilities/variables';
 @import 'app/_utilities/placeholders';
 

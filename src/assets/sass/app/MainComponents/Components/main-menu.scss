@@ -1,41 +1,62 @@
 .main-menu-container
 {
     @extend %center-column;
-    color: $clear-grey;
-    margin-top: 10%;
-    
-    .menu-title > h1
-    {
-        font-size: 1.7em;
-        font-weight: 300;
-    }
-    
+    margin-top: 3em;
+}
 
-    .menu-items
-    {
-        @extend %center-row;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        width: 60%;
-        height: 11em;
-        margin-top: 1%;
-        
-        .menu-item-content
-        {
-            @extend %center-column;
-            justify-content: center;
-            border-radius: 5px;
-            width: 24%;
-            height: 100%;
-            margin: auto;
-            background: $clear-grey;
-            &:hover
-            {
-                background: $absolute-white;
-            }
+.menu-items
+{
+  @extend %center-row;
+}
 
-        }
-        
-        
-    }
+.main-menu-item
+{
+  @extend %fully-centralized-column;
+  width: 15em;
+}
+
+.menu-item-content
+{
+  @extend %fully-centralized-column;
+  width: 85%;
+  text-align: center;
+  margin-top: $menu-item-margin;
+
+  .img-menu-item
+  {
+    width: 60px;
+    height: 60px;
+    fill: white;
+    // border: solid 5px $light-blue;
+    // border-radius: 50%;
+    margin-top: $menu-item-margin;
+  }
+
+  .title-menu-item
+  {
+    font-size: 2em;
+    color: $absolute-white;
+    text-transform: uppercase;
+    margin-top: $menu-item-margin;
+  }
+
+  .text-menu-item
+  {
+    color: $absolute-white;
+    font-size: .9em;
+    margin-top: $menu-item-margin;
+    height: 5em;
+  }
+
+  .btn-main-menu
+  {
+    cursor: pointer;
+    background: $absolute-white;
+    color: $dark-blue;
+    font-size: 1em;
+    padding: .3em 1.2em;
+    border: solid 2px $absolute-white;
+    border-radius: 5px;
+  }
+
 }

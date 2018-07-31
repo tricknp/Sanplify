@@ -11,3 +11,15 @@
   flex-direction: column;
   align-items: center;
 }
+
+%fully-centralized-row
+{
+  @extend %center-row;
+  justify-content: center;
+}
+
+%fully-centralized-column
+{
+  @extend %center-column;
+  justify-content: center;
+}
