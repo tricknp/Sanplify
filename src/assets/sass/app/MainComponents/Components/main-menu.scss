@@ -12,7 +12,7 @@
 .main-menu-item
 {
   @extend %fully-centralized-column;
-  width: 15em;
+  width: 16em;
 }
 
 .menu-item-content
@@ -22,27 +22,17 @@
   text-align: center;
   margin-top: $menu-item-margin;
 
-  .img-menu-item
-  {
-    width: 60px;
-    height: 60px;
-    fill: white;
-    // border: solid 5px $light-blue;
-    // border-radius: 50%;
-    margin-top: $menu-item-margin;
-  }
-
   .title-menu-item
   {
     font-size: 2em;
-    color: $absolute-white;
+    color: $clear-grey;
     text-transform: uppercase;
     margin-top: $menu-item-margin;
   }
 
   .text-menu-item
   {
-    color: $absolute-white;
+    color: $clear-grey;
     font-size: .9em;
     margin-top: $menu-item-margin;
     height: 5em;
@@ -51,11 +41,11 @@
   .btn-main-menu
   {
     cursor: pointer;
-    background: $absolute-white;
+    background: $clear-grey;
     color: $dark-blue;
     font-size: 1em;
     padding: .3em 1.2em;
-    border: solid 2px $absolute-white;
+    border: solid 2px $clear-grey;
     border-radius: 5px;
   }
 
