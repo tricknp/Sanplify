@@ -3,9 +3,13 @@ import App from './App'
 import router from './router'
 
 import * as VueGoogleMaps from "vue2-google-maps";
+import VueCharts from 'vue-chartjs'
+import { Bar, Line } from 'vue-chartjs'
 
 import './assets/sass/app.scss'
 import MapInfo from './MapInfo' // import of google maps api key, is not necessary if you have a api key
+
+
 
 Vue.use(VueGoogleMaps, {
   load: {
