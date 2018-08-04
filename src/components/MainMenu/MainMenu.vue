@@ -34,7 +34,7 @@
               <p class="text-menu-item"> {{ contactText }} </p>
             </div>
 
-            <router-link :to="{ name: 'Location' }" class="menu-item-content">
+            <router-link :to="{ name: 'Contact' }" class="menu-item-content">
               <button class="btn-main-menu">Acessar</button>
             </router-link>
 
