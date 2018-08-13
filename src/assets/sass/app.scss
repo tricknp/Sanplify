@@ -1,15 +1,3 @@
-*
-{
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    text-decoration: none;
-    border: none;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', sans-serif;
-}
-
-
 //Utilities
 @import 'app/_utilities/variables';
 @import 'app/_utilities/placeholders';
@@ -18,10 +6,18 @@
 @import 'app/UI/icons';
 
 //Components
-@import 'app/MainComponents/Components/header';
-@import 'app/MainComponents/Components/main-menu';
-@import 'app/MainComponents/Components/set-location-box';
-@import 'app/MainComponents/Components/claims';
-
+@import 'app/MainComponents/Components/sidebar';
+@import 'app/MainComponents/Components/aside';
 //Pages
 @import 'app/MainComponents/Pages/home';
+
+*
+{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  border: none;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}

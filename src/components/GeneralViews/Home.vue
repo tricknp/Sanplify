@@ -1,17 +1,18 @@
 <template>
     <section class="home-page">
-        <Header />
-        <MainMenu />
-    </section>    
+        <SideBar />
+        <Map />
+        <Aside />
+    </section>
 </template>
 
 <script>
-import Header from '../FixedComponents/Header'
-import MainMenu from '../MainMenu/MainMenu'
+import SideBar from '../Main/SideBar'
+import Aside from '../Main/Aside'
+import Map from '../Location/Map'
 
 export default {
-
-    components: { Header, MainMenu }    
+    components: { SideBar, Map, Aside }
 
 }
 </script>
