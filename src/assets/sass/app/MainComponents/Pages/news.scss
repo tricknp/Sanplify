@@ -1,0 +1,65 @@
+.news
+{
+  @extend %fully-centralized;
+  float: right;
+  width: $calc-page;
+
+  &__container{
+    margin: 2.2em 2em;
+    width: 100%;
+    // background: blue;
+
+    &__title{
+      font-size: $long-title;
+      color: $medium-blue;
+    }
+
+    &__banner{
+      position: relative;
+      margin-top: 1%;
+      background: $medium-grey;
+      width: 75%;
+      height: 10em;
+      border-radius: 3px;
+
+      .--title{
+        position: absolute;
+        bottom: 3%;
+        left: 3%;
+        font-size: $long-title - .2em;
+        text-shadow: 0 0 8px $alpha;
+        color: $absolute-white;
+      }
+    }
+
+    &__content{
+      width: 75%;
+      margin-top: 1%;
+
+      .__subContainer{
+        @extend %row;
+        &:nth-child(1){ margin-top: 0 }
+        margin-top: 1%;
+
+        &__img{
+          background: $medium-grey;
+          width: 10em;
+          height: 6.5em;
+        }
+
+        &__news{
+          margin-left: 1.5%;
+          width: $full-size;
+          &--title{
+            color: $medium-blue;
+          }
+          &--text{
+            color: $alpha;
+            font-size: .9em;
+            margin-top: .5%;
+          }
+        }
+      }
+    }
+  }
+}

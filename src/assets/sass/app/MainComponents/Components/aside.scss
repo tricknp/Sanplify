@@ -1,9 +1,17 @@
 .aside
 {
-  position: absolute;
+  display: flex;
+  justify-content: center;
+  position: fixed;
   z-index: 9998;
-  width: 16em;
-  height: 100%;
+  width: 15em;
+  height: $full-size;
   left: 3.2em;
-  background: rgba(1, 133, 89, .9);
+  background: $transparent-green;
+
+  &__container{
+    @extend %column;
+    width: $full-size;
+    margin: 2.2em .7em;
+  }
 }

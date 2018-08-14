@@ -1,6 +1,10 @@
 //colors
-$dark-blue:#031621;
+$dark-blue: #031621;
+$medium-blue: #3d7cba;
 $absolute-white: #fff;
+$transparent-green: rgba(1, 133, 89, .9);
+$alpha: rgba(0, 0, 0, .5);
+$medium-grey: #dbdbdb;
 
 $clear-rose: #c43957;
 $clear-green: #557a43;
@@ -12,3 +16,5 @@ $clear-grey: #b2b6b8;
 //sizes
 $full-size: 100%;
 $menu-item-margin: .5em;
+$calc-page: calc(95% - 15em);
+$long-title: 2.1em;

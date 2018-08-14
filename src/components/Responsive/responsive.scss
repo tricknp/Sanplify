@@ -1,0 +1,357 @@
+@media screen and (max-width: 1680px) {
+    // ---> home <---
+    .home-container
+    {
+        width: 70.5%;
+    }
+
+    #aside
+    {
+        width: 40%
+    }
+
+    .teacher-page-content
+    {
+        width: 70.1%;
+    }
+
+}
+
+@media screen and (max-width: 1600px) {
+    // ---> home <---
+    .home-container
+    {
+        width: 71.5%;
+        height: 87vh;
+        margin: .5% auto;
+    }
+
+    .teacher-page-content
+    {
+        width: 72%;
+    }
+    .cacildis-container
+    {
+      margin-top: 9em;
+    }
+
+    .about-container, .scrap-content, .directories
+    {
+      min-height: 42em;
+    }
+}
+
+@media screen and (max-width: 1440px){
+    // ---> home <---
+    .home-container
+    {
+        width: 77%;
+    }
+
+    .div-aside-container
+    {
+        max-height: 84%;
+    }
+
+    .teacher-page-content
+    {
+        width: 80%;
+        margin-left: 11.5%;
+    }
+
+    .head
+    {
+      .center-header
+      {
+        margin-left: -50%;
+      }
+    }
+}
+
+@media screen and (max-width: 1366px){
+    // ---> home <---
+    .home-container
+    {
+        width: 74%;
+        height: 83.2vh;
+        margin: .4% auto;
+    }
+
+    .div-aside-container
+    {
+        max-height: 76.6%;
+    }
+
+    .head
+    {
+      .center-header
+      {
+        margin-left: -45.3%;
+      }
+    }
+
+    .teacher-page-content
+    {
+        width: 85%;
+        margin: .4% auto;
+    }
+
+    .about-container, .scrap-content, .directories
+    {
+      min-height: 32.5em;
+    }
+
+    .cacildis-container
+    {
+      margin-top: 2em;
+    }
+
+    .textarea-about
+    {
+      min-height: 3.6em;
+    }
+
+    .teacher-page-content{
+      height: 84vh;
+    }
+}
+
+@media screen and (max-width: 1280px){
+    // ---> home <---
+    .home-container
+    {
+        width: 74%;
+        height: 82.5vh;
+        margin: .3% auto;
+    }
+
+    .div-aside-container
+    {
+        max-height: 79%;
+    }
+
+    .teacher-page-content
+    {
+        width: 90%;
+        margin: .6% auto;
+    }
+
+    .head
+    {
+      .center-header
+      {
+        margin-left: -43%;
+      }
+    }
+
+    .about-container, .scrap-content, .directories
+    {
+      min-height: 32em;
+    }
+
+    .cacildis-container
+    {
+      margin-top: 3em;
+    }
+}
+
+//-
+@media screen and (max-width: 1190px){
+
+  .head
+  {
+    .center-header
+    {
+      margin-left: -45%;
+    }
+  }
+
+  #logo { display: none;}
+  .short-logo { display: block; }
+
+  .teacher-page-content, .home-container
+  {
+      width: 83%;
+      margin: .6% auto;
+  }
+
+  .square-photo
+  {
+      width: 6.2em;
+      height: 6.2em;
+  }
+
+}
+
+@media screen and (max-width: 1024px){
+    .head
+    {
+      .center-header
+      {
+        margin-left: -37%;
+      }
+    }
+
+    .teacher-page-content, .home-container
+    {
+        width: $full-size;
+        margin: .3% auto;
+        height: 83.5vh;
+    }
+
+    .teacher-description
+    {
+        margin: .5em 0;
+    }
+
+}
+
+//-
+@media screen and (max-width: 960px){
+    .head
+    {
+      .center-header
+      {
+        margin-left: -32%;
+      }
+    }
+}
+
+//-
+@media screen and (max-width: 900px){
+    .head
+    {
+      .center-header
+      {
+        margin-left: -30%;
+      }
+    }
+}
+
+@media screen and (max-width: 840px){
+    .head
+    {
+      .center-header
+      {
+        margin-left: -25%;
+      }
+    }
+}
+
+@media screen and (max-width: 800px){
+
+  .teacher-description
+  {
+      margin: .5em 1em;
+  }
+
+  .head
+  {
+    .center-header
+    {
+      margin-left: -15%;
+    }
+  }
+
+  #footer
+  {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 720px){
+
+  .head
+  {
+    .center-header
+    {
+      margin-left: -5%;
+    }
+  }
+
+  #aside{ display: none;}
+
+  .home-container
+  {
+      width: $full-size;
+      height: $full-size;
+  }
+
+  .feed
+  {
+    width: $full-size;
+  }
+
+  .teacher-page-content
+  {
+    height: 90vh;
+  }
+}
+
+@media screen and (max-width: 640px){
+  .head
+  {
+    .center-header
+    {
+      .search { display: none; }
+    }
+  }
+}
+
+@media screen and (max-width: 360px){
+
+  .feed
+  {
+    height: 100vh;
+  }
+
+  .square-photo
+  {
+      width: 4em;
+      height: 4em;
+  }
+
+
+  .teacher-page-content
+  {
+    width: $full-size;
+    height: $full-size;
+  }
+
+  .teacher-profile
+  {
+      .div-teacher-img
+      {
+          width: 15%;
+          margin-left: 1%;
+      }
+
+      .container
+      {
+          height: 7.2em;
+      }
+
+      .teacher-description
+      {
+          font-size: 1.65em;
+          margin: .3em;
+          .teacher-name
+          {
+            font-size: .8em;
+          }
+
+          .div-desc-teacher{
+              width: 13em;
+          }
+      }
+  }
+
+  .tabs-header
+  {
+    span:nth-child(1)
+    {
+        margin-left: 20%;
+    }
+  }
+
+}

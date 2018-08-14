@@ -1,6 +1,6 @@
 .sidebar
 {
-  position: absolute;
+  position: fixed;
   z-index: 9999;
   height: 100vh;
   width: 3.2em;
@@ -31,4 +31,5 @@
     .--grey  { background: $clear-grey;   }
 
   }
+
 }
