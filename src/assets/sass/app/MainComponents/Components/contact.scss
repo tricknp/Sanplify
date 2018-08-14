@@ -1,0 +1,89 @@
+.contact
+{
+  @extend %fully-centralized;
+  height: 100vh;
+
+
+  &__container{
+    @extend %fully-centralized-column;
+    width: $full-size - 55%;
+
+    &__title{
+      font-size: $long-title;
+      font-weight: 700;
+      color: $light-green;
+    }
+
+    &__options{
+      @extend %fully-centralized-row;
+      width: $full-size;
+      margin-top: 2%;
+
+      .--item{
+        @extend %fully-centralized-column;
+        &:nth-child(1){ margin-left: 0}
+        margin-left: .8em;
+        background: $medium-grey;
+        width: 33%;
+        height: 10em;
+
+        &__icon_container{
+          background: $light-green;
+          width: 4em;
+          height: 4em;
+          border-radius: 50%;
+        }
+
+        &__text{
+          margin-top: 3%;
+          color: $light-green;
+        }
+      }
+    }
+
+    &__form{
+      @extend %column;
+      position: relative;
+      justify-content: space-between;
+      width: $full-size;
+      margin-top: 5%;
+
+      .form-container{
+        @extend %row;
+        justify-content: space-between;
+        &--left{
+          @extend %column;
+          width: 49%;
+
+          &__input{
+            &:nth-child(1){ margin: 0}
+            margin-top: 2%;
+            background: $medium-grey;
+            font-size: 1em;
+            padding: .5em 0;
+            text-indent: 8px;
+          }
+        }
+
+        &--right{
+          min-width: 49%;
+          max-width: 49%;
+          max-height: 18em;
+          background: $medium-grey;
+        }
+      }
+    }
+
+    &--btn{
+      position: absolute;
+      bottom: -27%;
+      right: 0%;
+      color: $alpha;
+      text-align: center;
+      width: 10em;
+      padding: .5em 0em;
+      font-size: 1em;
+      background: $light-green;
+    }
+  }
+}
