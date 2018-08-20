@@ -13,3 +13,10 @@ export default {
     components: { SideBar, Map }
 }
 </script>
+
+<style lang="scss" scoped >
+.sidebar
+{
+  position: relative
+}
+</style>

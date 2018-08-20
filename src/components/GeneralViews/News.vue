@@ -1,7 +1,7 @@
 <template>
-  <div class="">
+  <div class="news-page">
     <SideBar />
-    <Aside />
+    <Aside v-if="toggleAside" />
   <section class="news">
     <div class="news__container">
 
@@ -57,9 +57,18 @@
 <script>
 import SideBar from '../Main/SideBar'
 import Aside from '../Main/Aside'
+import toggleAside from '../_mixins/toggleAside'
 
 
 export default {
-    components: { SideBar, Aside }
+   components: { SideBar, Aside },
+
+   mixins: [ toggleAside ],
+
+    created(){
+      this.$bus.$on('actionAside', state => {
+        this.toggleAside = state
+      })
+    },
 }
 </script>

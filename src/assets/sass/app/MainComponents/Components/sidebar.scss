@@ -1,6 +1,6 @@
 .sidebar
 {
-  // position: fixed;
+  position: fixed;
   z-index: 9999;
   height: 100vh;
   width: 3.2em;
@@ -12,23 +12,23 @@
 
     &__item{
       @extend %fully-centralized;
-      margin-top: 1em;
-      width: 1.6em;
-      height: 1.6em;
+      margin-top: 1.2em;
+      width: 1.8em;
+      height: 1.8em;
       cursor: pointer;
-      border-radius: $full-size - 50%;
+      border-radius: 50%;
       &:nth-child(6){
         position: absolute;
         bottom: 2%;
       }
     }
 
-    .--rose  { background: $clear-rose;   }
-    .--green { background: $clear-green;  }
-    .--blue  { background: $clear-blue;   }
-    .--orange{ background: $clear-orange; }
-    .--purple{ background: $clear-purple; }
-    .--grey  { background: $clear-grey;   }
+    // .--rose  { background: $clear-rose;   }
+    // .--green { background: $clear-green;  }
+    // .--blue  { background: $clear-blue;   }
+    // .--orange{ background: $clear-orange; }
+    // .--purple{ background: $clear-purple; }
+    // .--grey  { background: $clear-grey;   }
 
   }
 }

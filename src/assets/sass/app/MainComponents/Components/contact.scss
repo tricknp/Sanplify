@@ -27,13 +27,6 @@
         width: 33%;
         height: 10em;
 
-        &__icon_container{
-          background: $light-green;
-          width: 4em;
-          height: 4em;
-          border-radius: 50%;
-        }
-
         &__text{
           margin-top: 3%;
           color: $light-green;
@@ -68,8 +61,11 @@
         &--right{
           min-width: 49%;
           max-width: 49%;
-          max-height: 18em;
+          min-height: 9.8em;
+          max-height: 9.8em;
           background: $medium-grey;
+          text-indent: 5px;
+          font-size: 1em;
         }
       }
     }
