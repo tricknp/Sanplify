@@ -3,10 +3,10 @@
   display: flex;
   justify-content: center;
   position: fixed;
-  z-index: 9998;
-  width: 15em;
+  z-index: 2;
+  width: 17em;
   height: $full-size;
-  left: 3.2em;
+  left: 3em;
   background: $transparent-green;
 
   &__container{

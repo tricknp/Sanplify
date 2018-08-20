@@ -9,6 +9,7 @@
 @import 'app/MainComponents/Components/sidebar';
 @import 'app/MainComponents/Components/aside';
 @import 'app/MainComponents/Components/contact';
+@import 'app/MainComponents/Components/map';
 //Pages
 @import 'app/MainComponents/Pages/home';
 @import 'app/MainComponents/Pages/news';
@@ -22,4 +23,10 @@
   border: none;
   box-sizing: border-box;
   font-family: 'Segoe UI', sans-serif;
+}
+
+button
+{
+  border: none;
+  background: transparent;
 }

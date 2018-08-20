@@ -3,8 +3,8 @@
   <aside class="sidebar">
     <div class="sidebar__container">
 
-      <router-link :to="{ name: 'Home'}">
-        <div class="sidebar__container__item --rose">   </div>
+      <router-link :to="{ name: 'Home'}" >
+        <div class="sidebar__container__item --rose" @click="actionAside()"></div>
       </router-link>
 
       <router-link :to="{ name: 'News'}">
@@ -22,6 +22,15 @@
 </template>
 
 <script>
+import Aside from '../Main/Aside'
+import toggleAside from '../_mixins/toggleAside'
+
 export default {
+
+  components: { Aside },
+
+  mixins: [ toggleAside ],
+
+
 }
 </script>
