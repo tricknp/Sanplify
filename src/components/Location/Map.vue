@@ -7,7 +7,6 @@
             placeholder="Adicionar endereço residencial"
             class="search__input"
             @place_changed="setPlace"
-            ref="search"
           ></gmap-autocomplete>
 
           <button v-if="currentPlace != null" @click="addMarker" class="icon-search">
@@ -29,7 +28,7 @@
     <gmap-map
       :center="center"
       :zoom="15"
-      style="width:100%   height: 100% "
+      style="width:100%; height:100%;"
     >
       <gmap-marker
         :key="index"
@@ -100,6 +99,7 @@ export default {
         }
       })
     },
+
   }
 }
 </script>
