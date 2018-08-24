@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+import Login    from '@/components/authentication/Login'
 import Home     from  '@/components/GeneralViews/Home'
 import News     from  '@/components/GeneralViews/News'
 import Contact  from  '@/components/GeneralViews/Contact'
@@ -13,7 +14,13 @@ export default new Router({
   [
     {
       path: '/',
-      redirect: '/home'
+      redirect: '/login'
+    },
+
+    {
+      path: '/login',
+      name: 'Login',
+      component: Login
     },
 
     {

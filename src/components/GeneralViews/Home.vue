@@ -17,6 +17,6 @@ export default {
 <style lang="scss" scoped >
 .sidebar
 {
-  position: relative
+  position: relative;
 }
 </style>
