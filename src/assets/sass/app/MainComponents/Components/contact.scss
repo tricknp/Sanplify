@@ -1,12 +1,12 @@
 .contact
 {
   @extend %fully-centralized;
+  width: 100%;
   height: 100vh;
-
 
   &__container{
     @extend %fully-centralized-column;
-    width: $full-size - 55%;
+    width: $full-size - 50%;
 
     &__title{
       font-size: $long-title;
@@ -61,7 +61,7 @@
         &--right{
           min-width: 49%;
           max-width: 49%;
-          min-height: 9.8em;  
+          // min-height: 9.8em;
           max-height: 9.8em;
           background: $medium-grey;
           text-indent: 5px;

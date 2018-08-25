@@ -1,14 +1,18 @@
 
 .news
 {
-  @extend %fully-centralized;
-  float: right;
-  width: $calc-page;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &__container{
-    margin: 2.2em 2em;
-    width: 100%;
-    // background: blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 85%;
+    // margin: 2.2em 0 0 22em;
 
     &__title{
       font-size: $long-title;
@@ -18,8 +22,10 @@
     &__banner{
       position: relative;
       margin-top: 1%;
-      background: $medium-grey;
-      width: 75%;
+      background: url('../../../static/news_bg.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 100%;
       height: 10em;
       border-radius: 3px;
 
@@ -34,18 +40,20 @@
     }
 
     &__content{
-      width: 75%;
+      width: 100%;
       margin-top: 1%;
 
       .__subContainer{
-        @extend %row;
         &:nth-child(1){ margin-top: 0 }
-        margin-top: 1%;
+        @extend %row;
+        height: 9em;
+        margin-top: 3%;
 
         &__img{
+          margin-top: 1%;
           background: $medium-grey;
-          width: 10em;
-          height: 6.5em;
+          width: 13em;
+          height: 8em;
         }
 
         &__news{
@@ -58,6 +66,12 @@
             color: $alpha;
             font-size: .9em;
             margin-top: .5%;
+
+            .show-more
+            {
+              color: $clear-blue;
+              cursor: pointer;
+            }
           }
         }
       }
