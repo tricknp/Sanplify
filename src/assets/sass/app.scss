@@ -1,10 +1,10 @@
 //Utilities
 @import 'app/_utilities/variables';
 @import 'app/_utilities/placeholders';
-@import 'app/_utilities/responsive';
 
 //UI
 @import 'app/UI/icons';
+@import 'app/UI/modal';
 
 //Components
 @import 'app/MainComponents/Components/sidebar';
@@ -15,6 +15,7 @@
 @import 'app/MainComponents/Pages/home';
 @import 'app/MainComponents/Pages/news';
 @import 'app/MainComponents/Pages/contact';
+@import 'app/_utilities/responsive';
 
 *
 {

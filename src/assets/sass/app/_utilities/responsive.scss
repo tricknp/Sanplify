@@ -52,3 +52,25 @@
     }
   }
 }
+
+@media (max-width: 430px){
+  .sidebar
+  {
+    position: fixed;
+    height: 3.3em;
+    width: 100%;
+    bottom: 10%;
+    &__container{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      &__item{
+        margin-top: 0;
+        width: 1.8em;
+        height: 1.8em;
+      }
+
+    }
+  }
+}
