@@ -16,8 +16,14 @@
   fill: $light-green;
 }
 
-.house-icon{
+.house-icon, .person-icon
+{
   fill: $clear-blue;
-  width: 2.2em;
-  display: none;
+  width: 1.7em;
+}
+
+.icon-gabage
+{
+  width: 1em;
+  fill: $absolute-white;
 }

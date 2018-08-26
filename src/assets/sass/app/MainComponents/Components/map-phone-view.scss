@@ -1,0 +1,40 @@
+.phone-view
+{
+  width: $full-size;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  &__discart
+  {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: -3%;
+    font-size: 1.5em;
+    font-weight: 800;
+    color: $absolute-white;
+    background-color: $clear-blue;
+    padding: 1.5em 3.4em;
+    border: 1px solid $clear-blue;
+    border-radius: 50px;
+  }
+
+  &__action
+  {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: .6em;
+    color: $clear-blue;
+    font-size: 1.2em;
+    font-weight: 700;
+    border-top: 1px solid $dark-blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    padding: 1.4em 0;
+  }
+}

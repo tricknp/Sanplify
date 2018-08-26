@@ -2,7 +2,7 @@
   <div class="map-container">
 
     <Aside v-if="toggleAside">
-        <!-- <label slot="content" class="search">
+        <label slot="content" class="search">
           <gmap-autocomplete
             placeholder="Adicionar endereço residencial"
             class="search__input"
@@ -20,7 +20,7 @@
               <path d="m447.05 428l-109.6-109.6c29.4-33.8 47.2-77.9 47.2-126.1 0-106.1-86.3-192.3-192.3-192.3-106.1 0-192.3 86.3-192.3 192.3s86.3 192.3 192.3 192.3c48.2 0 92.3-17.8 126.1-47.2l109.6 109.6c2.6 2.6 6.1 4 9.5 4s6.9-1.3 9.5-4c5.2-5.2 5.2-13.8 0-19zm-420.1-235.7c0-91.2 74.2-165.3 165.3-165.3 91.2 0 165.3 74.2 165.3 165.3s-74.1 165.4-165.3 165.4c-91.1 0-165.3-74.2-165.3-165.4z"/>
              </svg>
           </button>
-        </label> -->
+        </label>
 
         <PhoneView slot="content" @show="isShow = true" />
 
@@ -140,29 +140,18 @@ export default {
 
   .aside
   {
-    // display: none;
     background: #fff;
     width: 100%;
     position: fixed;
     bottom: 8%;
     left: 0;
-    height: 12em;
+    height: 15em;
     box-shadow: 4px 3px 4px 4px #ddd;
     z-index: 1;
-
-    .phone-view
-    {
-      display: flex;
-      align-items: center;
-      // background: red;
-    }
   }
-.search { display: none }
 
+  .phone-view{ display: flex }
 
-}
-.aaa{
-  z-index: 9999;
 }
 
 </style>
