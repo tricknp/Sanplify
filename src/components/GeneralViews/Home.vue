@@ -1,5 +1,7 @@
 <template>
     <section class="home-page">
+      <button v-if="isCollector">BOTAO 1 </button>
+      <button v-if="isProductor">BOTAO 2 </button>
         <SideBar />
         <Map />
     </section>
@@ -10,7 +12,17 @@ import SideBar from '../Main/SideBar'
 import Map from '../Location/Map'
 
 export default {
-    components: { SideBar, Map }
+    components: { SideBar, Map },
+    data(){
+     return{
+       isCollector: false,
+       isProductor: false,
+     }
+   },
+   beforeMount() {
+     this.isCollector = localStorage.role == 'collector';
+     this.isProductor = localStorage.role == 'productor';
+   }
 }
 </script>
 

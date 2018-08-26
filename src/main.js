@@ -1,13 +1,13 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import login from './components/authentication/login'
 
 import * as VueGoogleMaps from "vue2-google-maps";
 import VTooltip from 'v-tooltip'
 
 import './assets/sass/app.scss'
 import MapInfo from './MapInfo' // import of google maps api key, is not necessary if you have a api key
-
 
 Vue.use(VTooltip)
 
@@ -30,8 +30,11 @@ Object.defineProperties(Vue.prototype, {
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
-new Vue({
+const vueInstance = new Vue({
   el: '#app',
   router,
   render: h => h(App)
 })
+
+
+login(null, vueInstance);

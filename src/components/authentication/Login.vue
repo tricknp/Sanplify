@@ -11,35 +11,25 @@
 </template>
 
 <script>
-import axios from 'axios'
-import url from '../_mixins/url'
+import login from './login.js'
+import url from "../_mixins/url";
 
 export default {
-  data(){
-    return{
-      email: '',
-      password: '',
-      role: '',
-    }
+  data() {
+    return {
+      email: "",
+      password: "",
+      role: ""
+    };
   },
 
-  mixins: [ url ],
+  mixins: [url],
 
   methods: {
-    signIn(){
-      axios.post(`${this.baseURL}login`, {
-        email: this.email,
-        password: this.password,
-      }).then(res => {
-        const token = res.data.token
-        console.log(token)
-        localStorage.setItem('token', token)
-        localStorage.setItem('email', this.email)
-
-        // console.log(res.data)
-      })
+    signIn() {
+      let userData = {email: this.email, password: this.password};
+      login(userData, this);
     }
   }
-
-}
+};
 </script>
