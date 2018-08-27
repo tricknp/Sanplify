@@ -301,8 +301,9 @@ export default {
       });
       marker.addListener("click", this.clickMarker);
       this.markers.push(marker);
-      if (this.markers.length == 2) {
+      if (this.markers.length == 2 && this.selectArea == false) {
         this.directions(this.markers[0].position, this.markers[1].position);
+        this.markers.forEach((elem) => (elem.setMap(null)))
         this.markers = []
       }
     },
