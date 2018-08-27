@@ -115,6 +115,9 @@ export default {
 
   data() {
     return {
+      map: {},
+      directionsService: {},
+      directionsDisplay: {},
       isShow: false,
       isAreaSelected: false,
       selectArea: false,
@@ -139,11 +142,9 @@ export default {
 
   mounted() {
     this.geolocate();
-    const addArea = this.addArea;
+    let setMap = this.setMap;
     this.$refs.mapRef.$mapPromise.then(map => {
-      map.addListener("click", function(e) {
-        addArea(map, e.latLng);
-      });
+      setMap(map);
     });
   },
 
@@ -151,7 +152,6 @@ export default {
     this.$bus.$on("actionAside", state => {
       this.toggleAside = state;
     });
-    console.log(localStorage.role);
   },
 
   computed: {
@@ -173,9 +173,44 @@ export default {
   },
 
   methods: {
+    setMap(map) {
+      this.map = map;
+      this.directionsService = new google.maps.DirectionsService();
+      this.directionsDisplay = new google.maps.DirectionsRenderer();
+      this.directionsDisplay.setMap(map);
+      let addArea = this.addArea;
+      let addTrashMarker = this.addTrashMarker;
+      map.addListener("click", function(e) {
+        addArea(map, e.latLng);
+        addTrashMarker(map, e.latLng);
+      });
+    },
     // receives a place object via the autocomplete component
     setPlace(place) {
       this.currentPlace = place;
+    },
+    //verifica se o ponto ta na area de um circulo
+    arePointsNear(checkPoint, centerPoint, km) {
+      let ky = 40000 / 360;
+      let kx = Math.cos(Math.PI * centerPoint.lat / 180.0) * ky;
+      let dx = Math.abs(centerPoint.lng - checkPoint.lng) * kx;
+      let dy = Math.abs(centerPoint.lat - checkPoint.lat) * ky;
+      return Math.sqrt(dx * dx + dy * dy) <= km;
+    },
+    directions(origin, destiny) {
+      const request = {
+        // Novo objeto google.maps.DirectionsRequest, contendo:
+        origin: origin, // origem
+        destination: destiny, // destino
+        travelMode: google.maps.TravelMode.DRIVING // meio de transporte, nesse caso, de carro
+      };
+      let directionsDisplay = this.directionsDisplay;
+      this.directionsService.route(request, function(result, status) {
+        if (status == google.maps.DirectionsStatus.OK) {
+          // Se deu tudo certo
+          directionsDisplay.setDirections(result); // Renderizamos no mapa o resultado
+        }
+      });
     },
     addMarker() {
       if (this.currentPlace) {
@@ -206,21 +241,20 @@ export default {
         });
         const editArea = this.editArea;
         const editAreaDone = this.editAreaDone;
-        circleArea.addListener('mouseover', function () {
-                    editArea(circleArea);
-                    circleArea.setOptions({
-                        fillColor: '#FF3155',
-                        strokeColor: "#FF0000"
-                    });
-                });
-        circleArea.addListener('mouseout', function () {
-                    editAreaDone();
-                    circleArea.setOptions({
-                        fillColor: '#FF0000',
-                        strokeColor: "#FF0000"
-                    });
-                });
-        console.log(circleArea);
+        circleArea.addListener("mouseover", function() {
+          editArea(circleArea);
+          circleArea.setOptions({
+            fillColor: "#FF3155",
+            strokeColor: "#FF0000"
+          });
+        });
+        circleArea.addListener("mouseout", function() {
+          editAreaDone();
+          circleArea.setOptions({
+            fillColor: "#FF0000",
+            strokeColor: "#FF0000"
+          });
+        });
         this.circles.push(circleArea);
         this.selectedArea = circleArea;
         this.selectArea = false;
@@ -238,7 +272,7 @@ export default {
     },
 
     //NOT IN USEEEEEE YET
-    addTrashMarker() {
+    addTrashMarker(map, latLng) {
       var image = {
         url:
           "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
@@ -266,6 +300,11 @@ export default {
         title: "Hello World!"
       });
       marker.addListener("click", this.clickMarker);
+      this.markers.push(marker);
+      if (this.markers.length == 2) {
+        this.directions(this.markers[0].position, this.markers[1].position);
+        this.markers = []
+      }
     },
 
     clickMarker() {
