@@ -1,7 +1,7 @@
 export default {
   data(){
     return{
-      baseURL: 'http://localhost:9999/'
+      baseURL: 'http://sanplify.herokuapp.com/'
     }
   }
 }

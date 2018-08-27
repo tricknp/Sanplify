@@ -1,7 +1,5 @@
 <template>
     <section class="home-page">
-      <button v-if="isCollector">BOTAO 1 </button>
-      <button v-if="isProductor">BOTAO 2 </button>
         <SideBar />
         <Map />
     </section>
