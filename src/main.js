@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import login from './components/authentication/login'
+import login from './components/authentication/loginn'
 
 import * as VueGoogleMaps from "vue2-google-maps";
 import VTooltip from 'v-tooltip'

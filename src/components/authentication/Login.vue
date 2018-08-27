@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import login from './login.js'
+import login from './loginn.js'
 import url from "../_mixins/url";
 
 export default {
