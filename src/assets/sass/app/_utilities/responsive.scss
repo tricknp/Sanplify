@@ -1,19 +1,19 @@
 // @media (max-width: 1280px){
 //
 //   .news{
-//     width: 100%;
+//     width: $full-size;
 //     height: 100vh;
 //
 //     &__container{
 //       height: 100vh;
 //
 //       &__banner{
-//         width: 100%;
+//         width: $full-size;
 //       }
 //
 //       &__content{
-//         width: 100%;
-//         height: 100%;
+//         width: $full-size;
+//         height: $full-size;
 //
 //         .__subContainer{
 //           height: 10em;
@@ -46,7 +46,8 @@
       width: 90%;
       .news__container__content{
         .__subContainer{
-          height: 12em;
+          height: 7em;
+          padding: .5em 0;
         }
       }
     }
@@ -58,7 +59,7 @@
   {
     position: fixed;
     height: 3.3em;
-    width: 100%;
+    width: $full-size;
     bottom: 0;
     &__container{
       display: flex;
@@ -105,29 +106,80 @@
     }
   }
 
-  // .news{
-  //   display: flex;
-  //   justify-content: flex-start;
-  //   background: blue;
-  //   width: 100vw;
-  //   &__container{
-  //
-  //     margin: 0;
-  //     position: absolute;
-  //     background: red;
-  //     left: 0;
-  //     top: 0;
-  //
-  //     &__title { display: none }
-  //     &__banner{ margin-top: 0 }
-  //
-  //     .news__container__content{
-  //       .__subContainer{
-  //         background: blue;
-  //         height: 20em;
-  //       }
-  //     }
-  //   }
-  // }
+
+.news-page{
+  width: $full-size;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .add-new
+  {
+    background: $light-green;
+    color: $absolute-white;
+    font-size: 1.2em;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 50px;
+    margin-top: 2.5%;
+    padding: .7em 1.6em;
+  }
+}
+
+  .news
+  {
+    width: $full-size;
+    height: $full-size;
+    align-items: flex-start;
+
+    .news__container{
+      margin-left: 0;
+      margin-top: 2%;
+      width: 95%;
+
+      &__title{ display: none }
+      &__banner{
+        position: relative;
+        margin: 0%;
+         width: $full-size;
+        height: 8em;
+        .--title { font-size:1.2em }
+      }
+
+      &__content{
+        width: $full-size;
+        margin-top: 5%;
+
+        .__subContainer{
+          &:nth-child(1){ margin-top: 0 }
+          margin-top: 3%;
+          // height: 6em;
+          // background: blue;
+
+          &__img{
+            margin-top: 1%;
+            width: 6.6em;
+            height: 6em;
+          }
+
+          &__news{
+            margin-left: 1.5%;
+            width: $full-size;
+            &--title{
+              font-size: 1.1em;
+            }
+            &--text{
+              color: $alpha;
+              font-size: .9em;
+              margin-top: .5%;
+            }
+          }
+        }
+      }
+    }
+  }
+
 
 }

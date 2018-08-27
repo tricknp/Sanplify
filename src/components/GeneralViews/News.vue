@@ -3,6 +3,8 @@
     <SideBar />
     <Aside v-if="toggleAside" />
 
+    <button class="add-new" v-if="isCollector"> Criar Notícia </button>
+
   <section class="news">
     <div class="news__container">
 
@@ -47,7 +49,7 @@ export default {
    mixins: [ toggleAside ],
    data(){
      return{
-       l: 465,
+       l: 90,
        news:
        [
          {
@@ -76,6 +78,16 @@ export default {
      }
    },
 
+   computed:{
+     isCollector: function(){
+       if (localStorage.role == 'collector') {
+         return true
+       }else{
+         return false
+       }
+     }
+   },
+
     created(){
       this.$bus.$on('actionAside', state => {
         this.toggleAside = state
@@ -92,4 +104,5 @@ export default {
 
 <style lang="scss" scoped>
   .aside{ display: none}
+
 </style>

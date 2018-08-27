@@ -17,6 +17,9 @@
 @import 'app/MainComponents/Pages/home';
 @import 'app/MainComponents/Pages/news';
 @import 'app/MainComponents/Pages/contact';
+@import 'app/MainComponents/Pages/linked-companies';
+
+
 @import 'app/_utilities/responsive';
 
 *
@@ -34,4 +37,5 @@ button
 {
   border: none;
   background: transparent;
+  cursor: pointer;
 }

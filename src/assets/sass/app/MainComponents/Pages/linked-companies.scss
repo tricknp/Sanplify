@@ -1,0 +1,85 @@
+.lc-page
+{
+  @extend %page;
+  display: flex;
+  justify-content: center;
+
+  &__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(100% - 30px);
+
+    &--input{
+      margin-top: 4%;
+      font-size: 1em;
+      padding: .7em 1.8em;
+      border: solid 1px #d4d4d4;
+      border-radius: 50px;
+    }
+  }
+
+}
+
+.tabs-header
+{
+  margin-top: 10%;
+  border-bottom: .4px solid #d4d4d4;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+
+  span {
+      font-size: 1.2em;
+      display: inline-block;
+      padding-bottom: 0.3rem;
+      margin-right: 1.5rem;
+      transition: .10s ease-in;
+      border-bottom: 1px solid transparent;
+      color: #949494;
+
+      &.active
+      {
+          color: $alpha;
+          border-bottom: 2px solid $alpha;
+      }
+
+      &:hover
+      {
+          cursor: pointer;
+          color: $alpha;
+          transition: none;
+          border-bottom: 2px solid $alpha;
+      }
+  }
+}
+
+.tab-container
+{
+  height: 100%;
+  margin-top: 4%;
+  width: 100%;
+
+  &__content{
+    display: flex;
+    .--item
+    {
+      &:nth-child(1){ margin: 1em 0 }
+      margin: 1em;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 7em;
+      // height: 6em;
+      &__img{
+        border-radius: 50%;
+        width: 60%;
+      }
+      &__name {
+        color: $alpha;
+        margin-top: 7%;
+      }
+    }
+  }
+}

@@ -5,6 +5,7 @@ import Login    from '@/components/authentication/Login'
 import Home     from  '@/components/GeneralViews/Home'
 import News     from  '@/components/GeneralViews/News'
 import Contact  from  '@/components/GeneralViews/Contact'
+import LinkedCompanies from '@/components/GeneralViews/LinkedCompanies'
 
 Vue.use(Router)
 
@@ -39,6 +40,12 @@ export default new Router({
       path: '/contato',
       name: 'Contact',
       component: Contact
+    },
+
+    {
+      path: '/vinculados',
+      name: 'LinkedCompanies',
+      component: LinkedCompanies
     },
 
   ]

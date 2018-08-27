@@ -49,10 +49,10 @@
 
 
     <modal v-if="isShow">
-      <h1 slot="header">blablalbla</h1>
-      <label slot="content" class="aaa">
+      <h1 slot="header">Adicionar Endereço</h1>
+      <label slot="content">
         <gmap-autocomplete
-          placeholder="Adicionar endereço residencial"
+          placeholder="Local da coleta... "
           class="search__input"
           @place_changed="setPlace"
         ></gmap-autocomplete>

@@ -11,7 +11,7 @@
     &__title{
       font-size: $long-title;
       font-weight: 700;
-      color: $light-green;
+      color: $clear-blue;
     }
 
     &__options{
@@ -29,7 +29,7 @@
 
         &__text{
           margin-top: 3%;
-          color: $light-green;
+          color: $clear-blue;
         }
       }
     }
@@ -73,13 +73,13 @@
     &--btn{
       position: absolute;
       bottom: -27%;
-      right: 0%;
+      right: 0%;  
       color: $alpha;
       text-align: center;
       width: 10em;
       padding: .5em 0em;
       font-size: 1em;
-      background: $light-green;
+      background: $clear-blue;
     }
   }
 }
