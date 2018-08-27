@@ -44,8 +44,10 @@
       <span class="isCollector__menu--close" @click="toggleOptions = false">fechar</span>
       <button class="isCollector__menu--item">Criar nova rota de coleta</button>
       <button class="isCollector__menu--item">Criar ponto fixo de coleta</button>
-      <button class="isCollector__menu--item">Criar área de atividade</button>
+      <button class="isCollector__menu--item" @click="selectActivityArea(), toggleOptions = false">Criar área de atividade</button>
     </div>
+
+
 
 
     <modal v-if="isShow">
@@ -73,7 +75,7 @@
       <button slot="footer" @click="isShow = false">fechar</button>
     </modal>
 
-    <gmap-map
+    <gmap-map ref="mapRef"
       :center="center"
       :zoom="15"
       style="width:100%; height:100%;"
@@ -86,81 +88,232 @@
       ></gmap-marker>
     </gmap-map>
 
+    <input v-if="isAreaSelected" v-model="selectedAreaRadius" type="range" min="30" max="1000" class="slider"
+  style="
+  width: 150px;
+  height: 20px;
+  margin: 0;
+  transform-origin: 75px 75px;
+  transform: rotate(-90deg);
+">
+<button v-if="isAreaSelected" @click="editAreaDone">OK</button>
+
   </div>
 </template>
 
 <script>
-import Aside from '../Main/Aside'
-import Modal from '../UIComponents/Modal'
-import toggleAside from '../_mixins/toggleAside'
-import PhoneView from './PhoneView'
+import Aside from "../Main/Aside";
+import Modal from "../UIComponents/Modal";
+import toggleAside from "../_mixins/toggleAside";
+import PhoneView from "./PhoneView";
 export default {
   name: "GoogleMap",
 
   components: { Aside, Modal, PhoneView },
 
-  mixins: [ toggleAside ],
+  mixins: [toggleAside],
 
   data() {
     return {
+      map: {},
+      directionsService: {},
+      directionsDisplay: {},
       isShow: false,
+      isAreaSelected: false,
+      selectArea: false,
+      selectedAreaRadius: 300,
+      selectedArea: {},
       toggleOptions: false,
       // default to Montreal to keep it simple
       // change this to whatever makes sense
       center: { lat: 45.508, lng: -73.587 },
       markers: [],
+      circles: [],
       places: [],
       currentPlace: null
+    };
+  },
+  watch: {
+    selectedAreaRadius: function(val) {
+      //do something when the data changes.
+      this.selectedArea.setRadius(Number(val));
     }
   },
 
   mounted() {
-    this.geolocate()
+    this.geolocate();
+    let setMap = this.setMap;
+    this.$refs.mapRef.$mapPromise.then(map => {
+      setMap(map);
+    });
   },
 
-  created(){
-    this.$bus.$on('actionAside', state => {
-      this.toggleAside = state
-    })
-    console.log(localStorage.role);
+  created() {
+    this.$bus.$on("actionAside", state => {
+      this.toggleAside = state;
+    });
   },
 
   computed: {
-    isProductor: function(){
-      if (localStorage.role == 'productor') {
-        return true
-      }else{
-        return false
+    isProductor: function() {
+      if (localStorage.role == "productor") {
+        return true;
+      } else {
+        return false;
       }
     },
 
-    isCollector: function(){
-      if (localStorage.role == 'collector') {
-        return true
-      }else{
-        false
+    isCollector: function() {
+      if (localStorage.role == "collector") {
+        return true;
+      } else {
+        false;
       }
     }
-
   },
 
   methods: {
+    setMap(map) {
+      this.map = map;
+      this.directionsService = new google.maps.DirectionsService();
+      this.directionsDisplay = new google.maps.DirectionsRenderer();
+      this.directionsDisplay.setMap(map);
+      let addArea = this.addArea;
+      let addTrashMarker = this.addTrashMarker;
+      map.addListener("click", function(e) {
+        addArea(map, e.latLng);
+        addTrashMarker(map, e.latLng);
+      });
+    },
     // receives a place object via the autocomplete component
     setPlace(place) {
-      this.currentPlace = place
+      this.currentPlace = place;
+    },
+    //verifica se o ponto ta na area de um circulo
+    arePointsNear(checkPoint, centerPoint, km) {
+      let ky = 40000 / 360;
+      let kx = Math.cos(Math.PI * centerPoint.lat / 180.0) * ky;
+      let dx = Math.abs(centerPoint.lng - checkPoint.lng) * kx;
+      let dy = Math.abs(centerPoint.lat - checkPoint.lat) * ky;
+      return Math.sqrt(dx * dx + dy * dy) <= km;
+    },
+    directions(origin, destiny) {
+      const request = {
+        // Novo objeto google.maps.DirectionsRequest, contendo:
+        origin: origin, // origem
+        destination: destiny, // destino
+        travelMode: google.maps.TravelMode.DRIVING // meio de transporte, nesse caso, de carro
+      };
+      let directionsDisplay = this.directionsDisplay;
+      this.directionsService.route(request, function(result, status) {
+        if (status == google.maps.DirectionsStatus.OK) {
+          // Se deu tudo certo
+          directionsDisplay.setDirections(result); // Renderizamos no mapa o resultado
+        }
+      });
     },
     addMarker() {
       if (this.currentPlace) {
         const marker = {
           lat: this.currentPlace.geometry.location.lat(),
           lng: this.currentPlace.geometry.location.lng()
-        }
-        this.markers.push({ position: marker })
-        this.places.push(this.currentPlace)
-        this.center = marker
-        this.currentPlace = null
+        };
+        this.markers.push({ position: marker });
+        this.places.push(this.currentPlace);
+        this.center = marker;
+        this.currentPlace = null;
       }
-      alert('Endereço residencial atualizado com sucesso.')
+      alert("Endereço residencial atualizado com sucesso.");
+    },
+
+    addArea(map, latLng) {
+      if (this.selectArea) {
+        var circleArea = new google.maps.Circle({
+          strokeColor: "#FF0000",
+          strokeOpacity: 0.3,
+          strokeWeight: 0.5,
+          draggable: true,
+          fillColor: "#FF0000",
+          fillOpacity: 0.35,
+          map: map,
+          center: latLng,
+          radius: 300
+        });
+        const editArea = this.editArea;
+        const editAreaDone = this.editAreaDone;
+        circleArea.addListener("mouseover", function() {
+          editArea(circleArea);
+          circleArea.setOptions({
+            fillColor: "#FF3155",
+            strokeColor: "#FF0000"
+          });
+        });
+        circleArea.addListener("mouseout", function() {
+          editAreaDone();
+          circleArea.setOptions({
+            fillColor: "#FF0000",
+            strokeColor: "#FF0000"
+          });
+        });
+        this.circles.push(circleArea);
+        this.selectedArea = circleArea;
+        this.selectArea = false;
+      }
+    },
+
+    editArea(area) {
+      this.selectedArea = area;
+      this.isAreaSelected = true;
+    },
+
+    editAreaDone() {
+      this.selectedArea = {};
+      this.isAreaSelected = false;
+    },
+
+    //NOT IN USEEEEEE YET
+    addTrashMarker(map, latLng) {
+      var image = {
+        url:
+          "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+        // This marker is 20 pixels wide by 32 pixels high.
+        size: new google.maps.Size(20, 32),
+        // The origin for this image is (0, 0).
+        origin: new google.maps.Point(0, 0),
+        // The anchor for this image is the base of the flagpole at (0, 32).
+        anchor: new google.maps.Point(0, 32)
+      };
+      // Shapes define the clickable region of the icon. The type defines an HTML
+      // <area> element 'poly' which traces out a polygon as a series of X,Y points.
+      // The final coordinate closes the poly by connecting to the first coordinate.
+      var shape = {
+        coords: [1, 1, 1, 20, 18, 20, 18, 1],
+        type: "poly"
+      };
+      const marker = new google.maps.Marker({
+        position: latLng,
+        map: map,
+        draggable: true,
+        //icon: image,
+        shape: shape,
+        zIndex: 1,
+        title: "Hello World!"
+      });
+      marker.addListener("click", this.clickMarker);
+      this.markers.push(marker);
+      if (this.markers.length == 2 && this.selectArea == false) {
+        this.directions(this.markers[0].position, this.markers[1].position);
+        this.markers.forEach((elem) => (elem.setMap(null)))
+        this.markers = []
+      }
+    },
+
+    clickMarker() {
+      alert("click");
+    },
+
+    selectActivityArea() {
+      this.selectArea = true;
     },
 
     geolocate: function() {
@@ -168,24 +321,20 @@ export default {
         this.center = {
           lat: position.coords.latitude,
           lng: position.coords.longitude
-        }
-      })
+        };
+      });
     },
 
-    showOptions(){
-      this.toggleOptions = true
+    showOptions() {
+      this.toggleOptions = true;
     }
-
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
-
-@media (max-width: 430px){
-
-  .aside
-  {
+@media (max-width: 430px) {
+  .aside {
     background: #fff;
     width: 100%;
     position: fixed;
@@ -196,8 +345,8 @@ export default {
     z-index: 1;
   }
 
-  .phone-view{ display: flex }
-
+  .phone-view {
+    display: flex;
+  }
 }
-
 </style>
