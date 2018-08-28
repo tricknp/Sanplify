@@ -9,7 +9,8 @@
         <h1 class="contact__container__title">Fale conosco</h1>
 
         <div class="contact__container__options">
-          <div class="--item">
+
+          <div class="--item" @click="isShow = true">
             <svg class="contact-icon" enable-background="new 0 0 512 512" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
             			<path d="m486.4 59.733h-460.8c-14.138 0-25.6 11.461-25.6 25.6v341.33c0 14.138 11.461 25.6 25.6 25.6h460.8c14.138 0 25.6-11.461 25.6-25.6v-341.33c0-14.138-11.461-25.6-25.6-25.6zm8.533 366.93c0 4.713-3.82 8.533-8.533 8.533h-460.8c-4.713 0-8.533-3.82-8.533-8.533v-341.33c0-4.713 3.82-8.533 8.533-8.533h460.8c4.713 0 8.533 3.82 8.533 8.533v341.33z"/>
             			<path d="m470.08 93.898c-2.255-0.197-4.496 0.51-6.229 1.966l-196.86 165.38c-6.349 5.337-15.616 5.337-21.965 0l-196.86-165.38c-2.335-1.96-5.539-2.526-8.404-1.484s-4.957 3.534-5.487 6.537 0.582 6.06 2.917 8.02l196.86 165.37c12.688 10.683 31.224 10.683 43.913 0l196.86-165.37c1.734-1.455 2.818-3.539 3.015-5.794s-0.51-4.496-1.966-6.229c-1.454-1.735-3.538-2.819-5.793-3.016z"/>
@@ -19,7 +20,7 @@
             <h3 class="--item__text">Enviar um e-mail</h3>
           </div>
 
-          <div class="--item">
+          <div class="--item" @click="isShow = true">
             <svg class="contact-icon" enable-background="new 0 0 512 512" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
               <path d="m502 246h-28.038c-5.522 0-9.999 4.477-9.999 9.999 0 5.523 4.478 9.999 9.999 9.999h28.038c5.522 0 9.999-4.477 9.999-9.999s-4.477-9.999-9.999-9.999z"/>
               <path d="m500.98 192.61c-2.762-4.783-8.875-6.421-13.659-3.66l-18.359 10.599c-4.783 2.761-6.422 8.876-3.66 13.659 1.852 3.209 5.213 5.002 8.669 5.002 1.696 0 3.416-0.432 4.99-1.341l18.359-10.6c4.783-2.761 6.422-8.876 3.66-13.659z"/>
@@ -62,13 +63,42 @@
       </div>
     </div>
 
+    <modal v-if="isShow">
+      <h1 slot="header" class="modal-title">Contate-nos</h1>
+
+      <form slot="content" class="modal-form">
+        <input type="text" placeholder="Nome completo" class="modal-form--input">
+        <input type="text" placeholder="Assunto" class="modal-form--input">
+        <textarea placeholder="Descrição..."></textarea>
+      </form>
+
+      <div slot="footer" class="container-btn">
+        <button class="container-btn--item" @click="isShow = false"> Cancelar </button>
+        <button class="container-btn--item" @click="sendForm()"> Enviar </button>
+      </div>
+    </modal>
+
   </section>
 </template>
 
 <script>
 import SideBar from '../Main/SideBar'
+import Modal from "../UIComponents/Modal"
 
 export default {
-    components: { SideBar }
+    components: { SideBar, Modal },
+
+    data(){
+      return{
+        isShow: false,
+      }
+    },
+
+    methods:{
+      sendForm(){
+        alert('Enviado com sucesso!')
+        this.isShow = false
+      }
+    }
 }
 </script>

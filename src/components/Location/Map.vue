@@ -41,7 +41,12 @@
     </div>
 
     <div class="isCollector__menu" v-if="toggleOptions">
-      <span class="isCollector__menu--close" @click="toggleOptions = false">fechar</span>
+      <span class="isCollector__menu--close" @click="toggleOptions = false">
+        <svg class="icon-close" version="1.1" viewBox="0 0 174.239 174.239" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+          <path d="m146.54 1.047c-1.396-1.396-3.681-1.396-5.077 0l-51.802 51.802c-1.396 1.396-3.681 1.396-5.077 0l-51.801-51.802c-1.396-1.396-3.681-1.396-5.077 0l-26.656 26.655c-1.396 1.396-1.396 3.681 0 5.077l51.802 51.802c1.396 1.396 1.396 3.681 0 5.077l-51.802 51.802c-1.396 1.396-1.396 3.681 0 5.077l26.655 26.655c1.396 1.396 3.681 1.396 5.077 0l51.802-51.802c1.396-1.396 3.681-1.396 5.077 0l51.801 51.801c1.396 1.396 3.681 1.396 5.077 0l26.655-26.655c1.396-1.396 1.396-3.681 0-5.077l-51.801-51.801c-1.396-1.396-1.396-3.681 0-5.077l51.801-51.801c1.396-1.396 1.396-3.681 0-5.077l-26.654-26.656z"/>
+        </svg>
+
+      </span>
       <button class="isCollector__menu--item">Criar nova rota de coleta</button>
       <button class="isCollector__menu--item">Criar ponto fixo de coleta</button>
       <button class="isCollector__menu--item" @click="selectActivityArea(), toggleOptions = false">Criar área de atividade</button>
@@ -51,28 +56,31 @@
 
 
     <modal v-if="isShow">
-      <h1 slot="header">Adicionar Endereço</h1>
       <label slot="content">
         <gmap-autocomplete
           placeholder="Local da coleta... "
-          class="search__input"
+          class="map-modal-input"
           @place_changed="setPlace"
         ></gmap-autocomplete>
 
-        <button v-if="currentPlace != null" @click="addMarker" class="icon-search">
+        <button v-if="currentPlace != null" @click="addMarker" class="icon-search sm">
           <svg class="icon-search" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 26 26">
            <path d="m.3,14c-0.2-0.2-0.3-0.5-0.3-0.7s0.1-0.5 0.3-0.7l1.4-1.4c0.4-0.4 1-0.4 1.4,0l.1,.1 5.5,5.9c0.2,0.2 0.5,0.2 0.7,0l13.4-13.9h0.1v-8.88178e-16c0.4-0.4 1-0.4 1.4,0l1.4,1.4c0.4,0.4 0.4,1 0,1.4l0,0-16,16.6c-0.2,0.2-0.4,0.3-0.7,0.3-0.3,0-0.5-0.1-0.7-0.3l-7.8-8.4-.2-.3z"/>
           </svg>
         </button>
 
-        <button v-else class="icon-search">
+        <button v-else class="icon-search sm">
            <svg class="icon-search" version="1.1" viewBox="0 0 451 451" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
             <path d="m447.05 428l-109.6-109.6c29.4-33.8 47.2-77.9 47.2-126.1 0-106.1-86.3-192.3-192.3-192.3-106.1 0-192.3 86.3-192.3 192.3s86.3 192.3 192.3 192.3c48.2 0 92.3-17.8 126.1-47.2l109.6 109.6c2.6 2.6 6.1 4 9.5 4s6.9-1.3 9.5-4c5.2-5.2 5.2-13.8 0-19zm-420.1-235.7c0-91.2 74.2-165.3 165.3-165.3 91.2 0 165.3 74.2 165.3 165.3s-74.1 165.4-165.3 165.4c-91.1 0-165.3-74.2-165.3-165.4z"/>
            </svg>
         </button>
       </label>
 
-      <button slot="footer" @click="isShow = false">fechar</button>
+      <button slot="header" @click="isShow = false" class="sm-close">
+        <svg class="icon-close" version="1.1" viewBox="0 0 174.239 174.239" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+          <path d="m146.54 1.047c-1.396-1.396-3.681-1.396-5.077 0l-51.802 51.802c-1.396 1.396-3.681 1.396-5.077 0l-51.801-51.802c-1.396-1.396-3.681-1.396-5.077 0l-26.656 26.655c-1.396 1.396-1.396 3.681 0 5.077l51.802 51.802c1.396 1.396 1.396 3.681 0 5.077l-51.802 51.802c-1.396 1.396-1.396 3.681 0 5.077l26.655 26.655c1.396 1.396 3.681 1.396 5.077 0l51.802-51.802c1.396-1.396 3.681-1.396 5.077 0l51.801 51.801c1.396 1.396 3.681 1.396 5.077 0l26.655-26.655c1.396-1.396 1.396-3.681 0-5.077l-51.801-51.801c-1.396-1.396-1.396-3.681 0-5.077l51.801-51.801c1.396-1.396 1.396-3.681 0-5.077l-26.654-26.656z"/>
+        </svg>
+      </button>
     </modal>
 
     <gmap-map ref="mapRef"
@@ -348,5 +356,20 @@ export default {
   .phone-view {
     display: flex;
   }
+
+  .map-modal-input
+  {
+    width: 85%;
+    padding: 1em;
+    border-bottom: 1px solid #031621;
+  }
+  
+  .sm-close
+  {
+    float: right;
+    margin-right: -8%;
+    margin-top: -18%;
+  }
+  .sm { padding: 1em 0 }
 }
 </style>

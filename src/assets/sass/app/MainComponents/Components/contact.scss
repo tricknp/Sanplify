@@ -26,6 +26,7 @@
         background: $medium-grey;
         width: 33%;
         height: 10em;
+        cursor: pointer;
 
         &__text{
           margin-top: 3%;
@@ -73,7 +74,7 @@
     &--btn{
       position: absolute;
       bottom: -27%;
-      right: 0%;  
+      right: 0%;
       color: $alpha;
       text-align: center;
       width: 10em;
@@ -81,5 +82,62 @@
       font-size: 1em;
       background: $clear-blue;
     }
+  }
+}
+
+.modal-title
+{
+  font-size: 1.5em;
+  color: $clear-blue;
+  text-align: center;
+}
+
+.modal-form
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &--input{
+    &:nth-child(1){ margin: 0}
+    width: 100%;
+    border-bottom: 1px solid $clear-blue;
+    border-radius: 3px;
+    font-size: 1.2em;
+    padding: .3em 0;
+    text-indent: 10px;
+    margin-top: 1em;
+  }
+
+  textarea
+  {
+    width: 100%;
+    border-bottom: 1px solid $clear-blue;
+    border-radius: 3px;
+    font-size: 1.2em;
+    height: 1.3em;
+    // padding: .3em 0;
+    text-indent: 10px;
+    margin-top: 1.3em;
+  }
+}
+
+.container-btn
+{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &--item{
+    font-size: 1.1em;
+    font-weight: 700;
+    background: $clear-blue;
+    color: #fff;
+    width: 49%;
+    padding: .7em 0;
+    border-radius: 5px;
+    cursor: pointer;
   }
 }
