@@ -1,0 +1,55 @@
+.login
+{
+  @extend %page;
+  @extend %column;
+  justify-content: flex-start;
+  align-items: center;
+
+  &__logo{
+    width: 85%;
+    margin-top: 5em;
+  }
+
+  &__text{
+    margin-top: 1em;
+    color: #d1d1d1;
+    font-size: 1.4em;
+  }
+
+  &__form{
+    @extend %column;
+    align-items: center;
+    margin-top: 1em;
+
+    &--input{
+      width: 100%;
+      font-size: 1.2em;
+      margin-top: 1.5em;
+      border-bottom: 1px solid #111;
+      padding: .4em 0;
+    }
+
+    &--btn{
+      margin-top: 1em;
+      background: $light-green;
+      color: #fff;
+      font-size: 1.7em;
+      font-weight: 600;
+      width: 90vw;
+      border-radius: 50px;
+      padding: .8em 0;
+    }
+
+    .forgotPass
+    {
+      margin-top: .5em;
+      color: #333;
+      font-size: 1em;
+
+      &__action{
+        cursor: pointer;
+        color: $clear-blue;
+      }
+    }
+  }
+}
