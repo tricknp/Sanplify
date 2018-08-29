@@ -1,7 +1,7 @@
 <template>
   <section class="login">
     <img src="../../../static/sanplifyLogo.svg" class="login__logo">
-    <h1 class="login__text">Seja bem vindo</h1>
+    <h1 class="login__text">Seja bem vindo!</h1>
 
     <form class="login__form">
       <input type="text" placeholder="Nome de usuario" v-model="email" class="login__form--input">
